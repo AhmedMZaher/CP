@@ -4,18 +4,15 @@ using namespace std;
 
 int main()
 {
-    int n,counter=0,total=0;
-    bool k;
-    cin>>n;
-    for(int i=1;i<=n;i++;){
-        for(int j=1;j<=3;j++){
-            cin>>k;
-            if(k)
-                counter++;
-        }
-        if(counter>=2)
-            total++;
+    int a,b,counter=0;
+    cin>>a>>b;
+    while(true){
+        a*=3;
+        b*=2;
+        counter++;
+        if(a>b)
+            break;
     }
-    cout<<total;
+    cout<<counter;
   return 0;
 }
