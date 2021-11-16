@@ -1,3 +1,4 @@
+//https://codeforces.com/problemset/problem/405/A
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
@@ -16,3 +17,12 @@ int main()
     }
   return 0;
 }
+
+
+/*
+INPUT:
+4
+3 2 1 2
+OUTPUT
+1 2 2 3 
+*/
