@@ -1,0 +1,66 @@
+#include <bits/stdc++.h>
+
+typedef long long ll;
+typedef unsigned long long ull;
+typedef long double ld;
+
+#define pb                 push_back
+#define rep(i,a,b)         for(int i=a;i<b;i++)
+#define rev(i,b,a)         for(int i=b;i>=a;i--)
+#define clr(tab, initval)  memset(tab, initval, sizeof(tab))
+#define pi                 3.14159265358979323846
+
+using namespace std;
+
+const int N = 1e5;
+
+bool vis[N];
+
+bool dfs(vector<int> graph[], int node, int parent, int &cnt)
+{
+    vis[node] = true;
+    cnt++;
+    for(int i(0); i<graph[node].size(); i++){
+        int x = graph[node][i];
+        if(vis[x] && x!=parent){
+            return true;
+        }
+        if(!vis[x] && dfs(graph, x, node, cnt)){
+            return true;
+        }
+    }
+    return false;
+}
+
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+
+    clr(vis,false);
+    vector<int> g[n];
+
+    rep(i,0,m){
+        int a,b;
+        cin>>a>>b;
+        a--;b--;
+        g[a].push_back(b);
+        g[b].push_back(a);
+    }
+    int ans = 0;
+    rep(i,0,n){
+        if(!vis[i]){
+            int cnt(0);
+            if(dfs(g,i,-1,cnt)){
+                if(cnt%2 != 0){
+                    ans++;
+                }
+            }
+        }
+    }
+    if((n-ans)%2 != 0){
+        ans++;
+    }
+
+    cout<<ans;
+}
