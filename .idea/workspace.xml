@@ -9,7 +9,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7291bf0d-8e32-405b-8b71-9835534ab65c" name="Changes" comment="" />
+    <list default="true" id="7291bf0d-8e32-405b-8b71-9835534ab65c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +49,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
@@ -74,6 +75,8 @@
       <workItem from="1643401295087" duration="588000" />
       <workItem from="1643442067715" duration="66000" />
       <workItem from="1643444327918" duration="222000" />
+      <workItem from="1643444585747" duration="67000" />
+      <workItem from="1643444665579" duration="72000" />
     </task>
     <servers />
   </component>
