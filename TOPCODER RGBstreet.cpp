@@ -1,0 +1,95 @@
+#include<set>
+#include<map>
+#include<list>
+#include<iomanip>
+#include<cmath>
+#include<string>
+#include<vector>
+#include<queue>
+#include<stack>
+#include<complex>
+#include<sstream>
+#include<iostream>
+#include<algorithm>
+#include<numeric>
+#include<utility>
+#include <functional>
+#include<stdio.h>
+#include<assert.h>
+#include<memory.h>
+using namespace std;
+
+#define all(v)				((v).begin()), ((v).end())
+#define sz(v)				((int)((v).size()))
+#define clr(v, d)			memset(v, d, sizeof(v))
+#define rep(i, v)		    for(int i=0;i<sz(v);++i)
+#define lp(i, n)		    for(ll i=0;i<(ll)(n);++i)
+#define lpi(i, j, n)	    for(int i=(j);i<(int)(n);++i)
+#define lpd(i, j, n)	    for(int i=(j);i>=(int)(n);--i)
+#define repa(v)			    lpi(i, 0, sz(v)) lpi(j, 0, sz(v[i]))
+#define P(x)				cout<<#x<<" = { "<<x<<" }\n"
+#define pb					push_back
+#define MP					make_pair
+#define el                  endl
+#define INF 9999
+
+typedef vector<int> vi;
+typedef vector<double> vd;
+typedef vector<vi> vvi;
+typedef vector<vd> vvd;
+typedef vector<string> vs;
+typedef long long ll;
+typedef long double ld;
+typedef pair<int, int> PII;
+
+const int OO = (int) 1e5;	//Small -> WRONG, Large -> OVERFLOW
+const int MAXN = 100000+1;
+
+int dx[] = { 0, 0, 1, -1, 1, -1, 1, -1 };
+int dy[] = { 1, -1, 0, 0, -1, 1, 1, -1 };
+
+int row[] = {2, 2, -2, -2, 1, 1, -1, -1 };
+int col[] = {-1, 1, 1, -1, 2, -2, 2, -2 };
+const double PI = acos(-1.0);
+const double EPS = (1e-7);
+const int N = 21;
+
+int r[MAXN], b[MAXN], g[MAXN];
+int n;
+int mem[MAXN][4];
+int minCost(int i, int lastColor)
+{
+    if(i == n)
+        return 0;
+    int &ret = mem[i][lastColor];
+    if(ret != -1)
+        return ret;
+    ret = OO;
+    if(lastColor !=0)
+        ret = min(ret, r[i] + minCost(i+1, 0));
+    if(lastColor !=1)
+        ret = min(ret, g[i] + minCost(i+1, 1));
+    if(lastColor !=2)
+        ret = min(ret, b[i] + minCost(i+1, 2));
+}
+
+class RGBStreet
+{
+public:
+    int estimateCost(vector<string> houses)
+    {
+        rep(i,houses)
+        {
+            istringstream iss(houses[i]);
+            iss>>r[i]>>b[i]>>g[i];
+        }
+        clr(mem,-1);
+        n = sz(houses);
+    }
+};
+
+
+int main() {
+    
+    return 0;
+}
