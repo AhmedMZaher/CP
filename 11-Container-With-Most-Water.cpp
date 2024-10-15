@@ -2,8 +2,8 @@ class Solution {
 public:
     int maxArea(vector<int>& height) {
         // The idea is to choose a vertical line and connect it to another
-        // vertical line to its left.
-        // If the length of the left line is greater than height[i] 
+        // vertical line to its left or its right.
+        // If the length of the line is greater than height[i] 
         // I will always choose the most left one or the right most one
         // because the answer will be min(left, height[i]) * distance = height[i] * distance
         // distance = (i - leftMost) OR (RightMost - i)
